@@ -6,7 +6,7 @@ import { SET_TIMER } from "./actions";
 const initState = 0;
 
 // ///////////////////
-// Rd
+// Reducer
 // ///////////////////
 
 const timerReducer = (state = initState, action) => {
