@@ -3,7 +3,9 @@ import { SET_TIMER } from "./actions";
 // ///////////////////
 // Initial State
 // ///////////////////
-const initState = 0;
+const initState = {
+  timer: 0,
+};
 
 // ///////////////////
 // Reducer

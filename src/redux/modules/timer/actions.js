@@ -8,7 +8,6 @@ export const SET_TIMER = "SET_TIMER";
 // Action Creator
 // ///////////////////
 
-export const setTimer = (timer) => {
-  const payload = { timer };
+export const setTimer = (payload) => {
   return { type: SET_TIMER, payload };
 };
