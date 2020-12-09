@@ -1,0 +1,18 @@
+@import "./reset";
+@import "./settings.variables";
+
+html,body{
+  background-color: $light-blue;
+}
+
+#{$root-class}{
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  overflow-x:hidden;
+  font-family: Lato, Microsoft JhengHe, sans-serif;
+  
+ *{
+    box-sizing: border-box;
+  }
+}
