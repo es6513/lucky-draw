@@ -2,12 +2,12 @@
 // Action
 // ///////////////////
 
-export const SET_TIMER = "SET_TIMER";
+export const SET_COUNTDOWN_SECONDS = "SET_COUNTDOWN_SECONDS";
 
 // ///////////////////
 // Action Creator
 // ///////////////////
 
-export const setTimer = (payload) => {
-  return { type: SET_TIMER, payload };
+export const setCountdownSeconds = (payload) => {
+  return { type: SET_COUNTDOWN_SECONDS, payload };
 };

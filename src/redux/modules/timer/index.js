@@ -1,10 +1,10 @@
-import { SET_TIMER } from "./actions";
+import { SET_COUNTDOWN_SECONDS } from "./actions";
 
 // ///////////////////
 // Initial State
 // ///////////////////
 const initState = {
-  timer: 0,
+  countdownSeconds: 0,
 };
 
 // ///////////////////
@@ -13,11 +13,11 @@ const initState = {
 
 const timerReducer = (state = initState, action) => {
   switch (action.type) {
-    case SET_TIMER:
-      const { timer } = action.payload;
+    case SET_COUNTDOWN_SECONDS:
+      const { countdownSeconds } = action.payload;
       return {
         ...state,
-        timer,
+        countdownSeconds,
       };
 
     default:
