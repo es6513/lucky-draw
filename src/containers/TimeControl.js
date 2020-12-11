@@ -17,7 +17,7 @@ function TimeControl() {
   };
 
   const drawLuckyPerson = () => {
-    dispatch(setLuckyPerson({ selectedId: 3 }));
+    dispatch(setLuckyPerson());
   };
 
   const timeupCallback = () => {

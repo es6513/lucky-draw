@@ -9,9 +9,10 @@ const initState = {
 const listsReducer = (state = initState, action) => {
   switch (action.type) {
     case SET_LUCKY_PERSON:
-      const { selectedId } = action.payload;
+      const numbersOfLists = state.attendLists.length;
+      const randomSelectedId = Math.floor(Math.random() * numbersOfLists);
       const luckyPerson = state.attendLists.find(
-        (person) => person.id === selectedId
+        (person) => person.id === randomSelectedId
       );
       return {
         ...state,
