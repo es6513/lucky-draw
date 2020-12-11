@@ -20,10 +20,7 @@ function AttendLists() {
       <HeadTitle headTag="h3">參與抽獎名單</HeadTitle>
       <Lists>
         {storeAttendLists.map((person, index) => (
-          <Lists.Item
-            key={index}
-            prefix={<Avatar gender={index % 2 === 0 ? "man" : "woman"} />}
-          >
+          <Lists.Item key={index} prefix={<Avatar gender={person.gender} />}>
             {person.name}
           </Lists.Item>
         ))}

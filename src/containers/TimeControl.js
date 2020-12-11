@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import HeadTitle from "../components/HeadTitle";
 import Timer from "../components/Timer";
 
