@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useForm } from "react-hook-form";
-import { useSelector, useDispatch } from "react-redux";
-import { setCountdownSeconds } from "../../redux/modules/timer/actions";
 import { SECONDS_PER_MINUTE } from "../../utils/timeConstants";
 import Input from "../Input";
 import Button from "../Button";
-var countDownTimer;
 
 function Timer() {
   const [countdownSeconds, setCountdownSeconds] = useState(0);
