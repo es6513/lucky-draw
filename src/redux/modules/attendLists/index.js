@@ -1,7 +1,8 @@
 import { SET_LUCKY_PERSON } from "./actions";
+import mockAttendLists from "./mockData";
 
 const initState = {
-  attendLists: [],
+  attendLists: mockAttendLists,
   luckyPerson: null,
 };
 

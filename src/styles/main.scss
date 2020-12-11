@@ -7,12 +7,15 @@ html,body{
 
 #{$root-class}{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  width: 80%;
   height: 100vh;
+  margin: 0 auto;
   overflow-x:hidden;
   font-family: Lato, Microsoft JhengHe, sans-serif;
   
  *{
     box-sizing: border-box;
+    flex-basis: 40%;
   }
 }

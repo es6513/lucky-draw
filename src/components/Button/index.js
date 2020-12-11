@@ -23,7 +23,7 @@ export default React.memo(Button);
 Button.propTypes = {
   className: PropTypes.string,
   handleClick: PropTypes.func,
-  children: PropTypes.any.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 Button.defaultProps = {
