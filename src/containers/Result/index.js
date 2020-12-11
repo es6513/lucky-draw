@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleShowResult } from "../redux/modules/result/actions";
-import Lightbox from "../components/Lightbox";
+import { toggleShowResult } from "store/modules/result/actions";
+import Lightbox from "components/Lightbox";
 
 function Result() {
   const dispatch = useDispatch();

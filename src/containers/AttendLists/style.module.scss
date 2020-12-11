@@ -1,0 +1,20 @@
+.attend-lists {
+ height: 800px;
+ padding: 20px;
+ border:solid 1px #000;
+ overflow-x: hidden;
+
+
+ .lists-item{
+   margin-bottom: 20px;
+   display: flex;
+   align-items: center;
+   >*{
+     flex-basis: (100%/3);
+   }
+ }
+
+ .lists-item__prefix{
+    height: 40px;
+  }
+}

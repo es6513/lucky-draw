@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import TimeControl from "./containers/TimeControl";
-import AttendLists from "./containers/AttendLists";
-import Result from "./containers/Result";
-import "./styles/main.scss";
+import TimeControl from "containers/TimeControl";
+import AttendLists from "containers/AttendLists";
+import Result from "containers/Result";
+import "styles/main.scss";
 
 import { config } from "./config";
 const { css } = config;

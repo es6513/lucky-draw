@@ -16,6 +16,9 @@ html,body{
   
  *{
     box-sizing: border-box;
+  }
+  
+  >*{
     flex-basis: 40%;
   }
 }

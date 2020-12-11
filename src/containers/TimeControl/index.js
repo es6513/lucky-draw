@@ -1,11 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleShowResult } from "../redux/modules/result/actions";
-import { setLuckyPerson } from "../redux/modules/attendLists/actions";
-import HeadTitle from "../components/HeadTitle";
-import Timer from "../components/Timer";
-
-import { config } from "../config";
+import { toggleShowResult } from "store/modules/result/actions";
+import { setLuckyPerson } from "store/modules/attendLists/actions";
+import HeadTitle from "components/HeadTitle";
+import Timer from "components/Timer";
+import { config } from "config";
 const { css } = config;
 const { ROOT_CLASS } = css;
 
