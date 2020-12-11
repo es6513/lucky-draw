@@ -8,6 +8,6 @@ export const SET_LUCKY_PERSON = "SET_LUCKY_PERSON";
 // Action Creator
 // ///////////////////
 
-export const setTimer = (payload) => {
+export const setLuckyPerson = (payload) => {
   return { type: SET_LUCKY_PERSON, payload };
 };

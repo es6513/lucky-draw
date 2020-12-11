@@ -4,9 +4,9 @@ const initState = {
   isResultShowed: false,
 };
 
-const listsReducer = (state = initState, action) => {
+const resultReducer = (state = initState, action) => {
   switch (action.type) {
-    case SET_:
+    case TOGGLE_SHOW_RESULT:
       const { isResultShowed } = action.payload;
       return {
         ...state,
@@ -18,4 +18,4 @@ const listsReducer = (state = initState, action) => {
   }
 };
 
-export default listsReducer;
+export default resultReducer;

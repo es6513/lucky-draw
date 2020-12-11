@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import TimeControl from "./containers/TimeControl";
 import AttendLists from "./containers/AttendLists";
 import Result from "./containers/Result";
@@ -9,18 +10,13 @@ const { css } = config;
 const { ROOT_CLASS } = css;
 
 function App() {
-  const [isResultShowed, setIsResultShowed] = useState(false);
-  const setShowResult = () => {
-    setIsResultShowed((isResultShowed) => !isResultShowed);
-  };
-  const timeUpCallback = () => {
-    setIsResultShowed(true);
-  };
+  const isResultShowed = useSelector(
+    (state) => state.resultReducer.isResultShowed
+  );
   return (
     <div className={`${ROOT_CLASS}`}>
       <TimeControl />
       <AttendLists />
-      <button onClick={setShowResult}>Show Result</button>
       {isResultShowed ? <Result /> : null}
     </div>
   );

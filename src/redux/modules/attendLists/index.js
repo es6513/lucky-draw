@@ -10,7 +10,7 @@ const listsReducer = (state = initState, action) => {
   switch (action.type) {
     case SET_LUCKY_PERSON:
       const { selectedId } = action.payload;
-      const luckyPerson = attendLists.find(
+      const luckyPerson = state.attendLists.find(
         (person) => person.id === selectedId
       );
       return {

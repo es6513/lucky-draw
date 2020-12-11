@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import { PropTypes } from "prop-types";
 import { useForm } from "react-hook-form";
 import { SECONDS_PER_MINUTE } from "../../utils/timeConstants";
 import Input from "../Input";
 import Button from "../Button";
 
-function Timer() {
+function Timer({ timeupCallback }) {
   const [countdownSeconds, setCountdownSeconds] = useState(0);
   const refCountTime = useRef();
   const countdownTimer = useRef();
@@ -33,6 +34,7 @@ function Timer() {
       if (refCountTime.current <= 0) {
         console.log("end up");
         clearInterval(timerId);
+        timeupCallback();
       }
       setCountdownSeconds(refCountTime.current);
     };
@@ -78,3 +80,7 @@ function Timer() {
 }
 
 export default Timer;
+
+Timer.propTypes = {
+  timeupCallback: PropTypes.func.isRequired,
+};
