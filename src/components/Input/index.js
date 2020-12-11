@@ -12,7 +12,7 @@ function Input({ inputName, useFormRef, className, errors, ...restProps }) {
   );
 }
 
-export default Input;
+export default React.memo(Input);
 
 Input.propTypes = {
   inputName: PropTypes.string.isRequired,

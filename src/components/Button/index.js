@@ -18,7 +18,7 @@ function Button({ className, handleClick, children, ...restProps }) {
   );
 }
 
-export default Button;
+export default React.memo(Button);
 
 Button.propTypes = {
   className: PropTypes.string,

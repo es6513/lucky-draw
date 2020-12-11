@@ -18,6 +18,7 @@ function Timer() {
     criteriaMode: "all",
   });
 
+  //Timer process
   const setTimerSeconds = (data) => {
     let { inputMinutes } = data;
     let inputSeconds = parseFloat(inputMinutes * SECONDS_PER_MINUTE);
@@ -27,10 +28,6 @@ function Timer() {
 
   const startCountdown = () => {
     const countDown = (timerId) => {
-      // clearInterval(countdownTimer.current);
-      console.log("state seconds", countdownSeconds);
-      console.log("ref seconds", refCountTime.current);
-
       if (refCountTime.current > 0) {
         refCountTime.current--;
       } else {
