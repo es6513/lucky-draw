@@ -17,7 +17,7 @@ function Result() {
   const luckyPerson = useSelector((state) => state.listsReducer.luckyPerson);
   return (
     <Lightbox title="抽獎結果" handleClose={closeResult}>
-      <Avatar className={cx("result__avatar")} gender={luckyPerson.gender} />
+      <Avatar className={cx("result-avatar")} gender={luckyPerson.gender} />
       <span>{luckyPerson.name}</span>
     </Lightbox>
   );

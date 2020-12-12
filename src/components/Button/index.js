@@ -1,10 +1,13 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import classnames from "classnames/bind";
+import styles from "./style.module.scss";
+const cx = classnames.bind(styles);
 
 function Button({ className, handleClick, children, ...restProps }) {
   return (
     <button
-      className={className}
+      className={cx(className, "button")}
       onClick={handleClick}
       onKeyDown={(event) => {
         const key = event.key;

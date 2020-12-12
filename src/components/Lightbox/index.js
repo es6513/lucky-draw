@@ -19,7 +19,12 @@ function LightBox({ className, title, children, handleClose }) {
           {title}
         </HeadTitle>
         <div className={cx("light-box-body")}>{children}</div>
-        <Button className={cx("light-box-button")} handleClick={handleClose}>
+        <Button
+          data-color="confirm"
+          data-size="big"
+          className={cx("light-box-button")}
+          handleClick={handleClose}
+        >
           OK!
         </Button>
       </div>

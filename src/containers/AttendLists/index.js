@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import classnames from "classnames/bind";
 import HeadTitle from "components/HeadTitle";
@@ -20,7 +20,7 @@ function AttendLists() {
       <HeadTitle headTag="h3">參與抽獎名單</HeadTitle>
       <div>
         <Lists className={cx("attend-lists")}>
-          <Lists.Item className={cx("lists-item", "lists-item__title")}>
+          <Lists.Item className={cx("lists-item", "lists-item-title")}>
             {listKeys.map((listKey, index) => (
               <div key={index}>{listKey}</div>
             ))}
@@ -29,7 +29,7 @@ function AttendLists() {
             <Lists.Item key={index} className={cx("lists-item")}>
               <div>
                 <Avatar
-                  className={cx("lists-item__avatar")}
+                  className={cx("lists-item-avatar")}
                   gender={person.gender}
                 />
               </div>

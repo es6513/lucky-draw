@@ -1,0 +1,61 @@
+@import "../../styles/settings.variables";
+
+
+//color
+$color-themes:(
+  submit:(
+    font-color: $white,
+    background-color: $black-100
+  ),
+  confirm:(
+    font-color: $white,
+    background-color: $primary
+  )
+);
+
+//size
+
+$size-themes:(
+  big:(
+    height: 3 * $space-basis,
+    font-size: 1.5* $space-basis,
+    border-radus: 1.5* $space-basis 
+  ),
+  md:(
+    height: 2 * $space-basis,
+    font-size:  $space-basis,
+    border-radus: 1* $space-basis 
+  )
+);
+
+
+.button {
+  outline: none;
+  font-weight: 800;
+  font-family: inherit;
+  border-color: transparent;
+  cursor: pointer;
+
+  @each $color, $styles in $color-themes{
+    &[data-color=#{$color}]{
+      color: map-get($styles , font-color);
+      background-color: map-get($styles , background-color);
+    }
+  }
+
+  @each $size, $styles in $size-themes{
+    &[data-size=#{$size}]{
+      height: map-get($styles , height);
+      font-size:map-get($styles ,  font-size);
+      border-radius: map-get($styles , border-radus);
+    }
+  }
+
+  &:disabled{
+    color: $disabled-font-color;
+    background-color: $disabled-background-color;
+    cursor: not-allowed;
+  }
+
+}
+

@@ -1,10 +1,10 @@
+@import "../../styles/settings.variables";
+
 
 @keyframes slideFromTop {
   from {top: -100px; opacity:0}
   to {top:0; opacity:1}
 }
-
-$space-basis: 16px;
 
 .light-box{
   display: flex;
@@ -18,7 +18,7 @@ $space-basis: 16px;
   outline: none;
   z-index: 1000; 
   background-color: rgba(0,0,0,0.4);
-  color: #000;
+  color: $black;
   overflow: auto; 
 
   .light-box-content {
@@ -46,10 +46,11 @@ $space-basis: 16px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 20px 0px;
+    margin: 1.25 * $space-basis 0;
   }
 
   .light-box-button{
+    width: 8 * $space-basis;
     display: block;
     margin: 0 auto;
   }

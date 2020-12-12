@@ -1,12 +1,15 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import classnames from "classnames/bind";
+import styles from "./style.module.scss";
+const cx = classnames.bind(styles);
 
 function Input({ inputName, useFormRef, className, errors, ...restProps }) {
   return (
     <input
       name={inputName}
       ref={useFormRef}
-      className={className}
+      className={cx(className, "input")}
       {...restProps}
     />
   );

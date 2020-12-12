@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { PropTypes } from "prop-types";
+import classnames from "classnames/bind";
 import { useForm } from "react-hook-form";
 import { SECONDS_PER_MINUTE } from "utils/timeConstants";
 import Input from "components/Input";
 import Button from "components/Button";
+
+import styles from "./style.module.scss";
+
+const cx = classnames.bind(styles);
 
 function Timer({ timeupCallback }) {
   const [countdownSeconds, setCountdownSeconds] = useState(0);
@@ -68,14 +73,27 @@ function Timer({ timeupCallback }) {
     countdownSeconds,
   ]);
   return (
-    <div>
+    <div className={cx("timer")}>
       <div>Render :{render.current++}</div>
       <form onSubmit={handleSubmit(handleCountdownProcess)}>
-        <Input inputName="inputMinutes" useFormRef={formRegister} />
-        <span>分鐘</span>
-        <Button type="submit">設定</Button>
+        <Input
+          data-size="md"
+          className={cx("timer-input")}
+          inputName="inputMinutes"
+          useFormRef={formRegister}
+        />
+        <span className={cx("timer-input__prefix")}>分鐘</span>
+        <Button
+          type="submit"
+          data-color="submit"
+          data-radius="general"
+          data-size="md"
+          className={cx("timer-submit-button")}
+        >
+          設定
+        </Button>
       </form>
-      {remainTime}
+      <div className={cx("timer-remaintime")}>{remainTime}</div>
     </div>
   );
 }

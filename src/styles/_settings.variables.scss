@@ -3,13 +3,25 @@
 $root-class:".lucky-draw";
 
 //Color
+$primary: #ea5548;
 $white: #fff;
 $black: #000;
-$light-blue: #add8e6;
+$black-100:#343a40;
+$gray-100: #eaeaea;
+$gray-200:#d3d3d3;
+$gray-300: #acacac;
+$gray-400: #6e6e6e;
 
-//FontBasis
 
-$font-basis: 1rem;
+
+//disabled
+$disabled-background-color: $gray-300;
+$disabled-font-color: $gray-400;
+
+
+//SpaceBasis
+
+$space-basis: 1rem;
 
 
 

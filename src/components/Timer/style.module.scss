@@ -1,0 +1,18 @@
+@import "../../styles/settings.variables";
+
+.timer{
+ 
+  &-input__prefix{
+    margin-left: $space-basis;
+  }
+  
+  &-submit-button{
+    width: 5 * $space-basis;
+    margin-left: $space-basis;
+  }
+
+  &-remaintime{
+    font-size: $space-basis;
+    margin-top: 3 * $space-basis;
+  }
+}
