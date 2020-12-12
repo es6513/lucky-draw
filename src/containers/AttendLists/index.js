@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import classnames from "classnames/bind";
 import HeadTitle from "components/HeadTitle";
@@ -18,7 +18,6 @@ function AttendLists() {
   return (
     <div>
       <HeadTitle headTag="h3">參與抽獎名單</HeadTitle>
-
       <div>
         <Lists className={cx("attend-lists")}>
           <Lists.Item className={cx("lists-item", "lists-item__title")}>

@@ -23,6 +23,7 @@ function TimeControl() {
     drawLuckyPerson();
     openResult();
   };
+
   return (
     <div className={`${ROOT_CLASS}__time-control`}>
       <HeadTitle headTag="h3">抽獎時間</HeadTitle>

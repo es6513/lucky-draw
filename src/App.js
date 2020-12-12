@@ -13,8 +13,11 @@ function App() {
   const isResultShowed = useSelector(
     (state) => state.resultReducer.isResultShowed
   );
+  const click = () => {
+    console.log("click");
+  };
   return (
-    <div className={`${ROOT_CLASS}`}>
+    <div onClick={click} className={`${ROOT_CLASS}`}>
       <TimeControl />
       <AttendLists />
       {isResultShowed ? <Result /> : null}

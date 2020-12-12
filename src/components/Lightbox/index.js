@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import { PropTypes } from "prop-types";
 import classnames from "classnames/bind";
 import HeadTitle from "../HeadTitle";
 import Button from "../Button";
+import useOutsideClick from "customHooks/useOutsideClick";
 import styles from "./style.module.scss";
 
 const cx = classnames.bind(styles);
 
 function LightBox({ className, title, children, handleClose }) {
+  const lightBoxContentRef = useRef(null);
+  useOutsideClick(lightBoxContentRef, handleClose);
+
   return (
     <div className={cx(className, "light-box")}>
-      <div className={cx("light-box-content")}>
+      <div ref={lightBoxContentRef} className={cx("light-box-content")}>
         <HeadTitle headTag="h3" className={cx("light-box-header")}>
           {title}
         </HeadTitle>

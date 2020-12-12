@@ -9,7 +9,8 @@ function Timer({ timeupCallback }) {
   const [countdownSeconds, setCountdownSeconds] = useState(0);
   const refCountTime = useRef();
   const countdownTimer = useRef();
-
+  const render = useRef(0);
+  console.log("render");
   //Timer Form
   const { register: formRegister, formState, handleSubmit } = useForm({
     mode: "all",
@@ -69,6 +70,7 @@ function Timer({ timeupCallback }) {
   ]);
   return (
     <div>
+      <div>Render :{render.current++}</div>
       <form onSubmit={handleSubmit(handleCountdownProcess)}>
         <Input inputName="inputMinutes" useFormRef={formRegister} />
         <span>分鐘</span>
