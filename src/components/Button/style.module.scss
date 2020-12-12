@@ -5,11 +5,13 @@
 $color-themes:(
   submit:(
     font-color: $white,
-    background-color: $black-100
+    background-color: $black-100,
+    hover-background-color: darken($black-100, 10%)
   ),
   confirm:(
     font-color: $white,
-    background-color: $primary
+    background-color: $primary,
+    hover-background-color: darken($primary, 10%)
   )
 );
 
@@ -40,6 +42,10 @@ $size-themes:(
     &[data-color=#{$color}]{
       color: map-get($styles , font-color);
       background-color: map-get($styles , background-color);
+
+      &:not(:disabled):hover{
+        background-color: map-get($styles , hover-background-color);
+      }
     }
   }
 
