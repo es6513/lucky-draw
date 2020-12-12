@@ -10,7 +10,6 @@ function Timer({ timeupCallback }) {
   const refCountTime = useRef();
   const countdownTimer = useRef();
   const render = useRef(0);
-  console.log("render");
   //Timer Form
   const { register: formRegister, formState, handleSubmit } = useForm({
     mode: "all",

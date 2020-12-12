@@ -19,7 +19,9 @@ function LightBox({ className, title, children, handleClose }) {
           {title}
         </HeadTitle>
         <div className={cx("light-box-body")}>{children}</div>
-        <Button handleClick={handleClose}>OK!</Button>
+        <Button className={cx("light-box-button")} handleClick={handleClose}>
+          OK!
+        </Button>
       </div>
     </div>
   );

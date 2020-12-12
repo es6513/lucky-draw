@@ -1,8 +1,12 @@
 import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import classnames from "classnames/bind";
 import { toggleShowResult } from "store/modules/result/actions";
 import Lightbox from "components/Lightbox";
-import Button from "components/Button";
+import Avatar from "components/Avatar";
+import styles from "./style.module.scss";
+
+const cx = classnames.bind(styles);
 
 function Result() {
   const dispatch = useDispatch();
@@ -13,7 +17,8 @@ function Result() {
   const luckyPerson = useSelector((state) => state.listsReducer.luckyPerson);
   return (
     <Lightbox title="抽獎結果" handleClose={closeResult}>
-      {luckyPerson.name}
+      <Avatar className={cx("result__avatar")} gender={luckyPerson.gender} />
+      <span>{luckyPerson.name}</span>
     </Lightbox>
   );
 }
