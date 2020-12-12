@@ -1,20 +1,35 @@
 .attend-lists {
- height: 800px;
- padding: 20px;
+ height: 600px;
+ width: 600px;
+ margin-top: 20px;
  border:solid 1px #000;
  overflow-x: hidden;
 
+ .lists-item__title{
+    position: sticky;
+    top: 0;
+    background-color: #d3d3d3;
+  }
 
- .lists-item{
-   margin-bottom: 20px;
-   display: flex;
-   align-items: center;
+ .lists-item, .lists-item__title{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
    >*{
      flex-basis: (100%/3);
    }
  }
 
- .lists-item__prefix{
+ .lists-item:first-child{
+    padding: 10px;
+  }
+
+ .lists-item:not(:first-child){
+    margin-left: 20px;
+    margin-right: 20px;
+ }
+
+ .lists-item__avatar{
     height: 40px;
   }
 }

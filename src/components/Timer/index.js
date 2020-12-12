@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { PropTypes } from "prop-types";
 import { useForm } from "react-hook-form";
-import { SECONDS_PER_MINUTE } from "../../utils/timeConstants";
-import Input from "../Input";
-import Button from "../Button";
+import { SECONDS_PER_MINUTE } from "utils/timeConstants";
+import Input from "components/Input";
+import Button from "components/Button";
 
 function Timer({ timeupCallback }) {
   const [countdownSeconds, setCountdownSeconds] = useState(0);

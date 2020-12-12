@@ -8,6 +8,8 @@ import styles from "./style.module.scss";
 
 const cx = classnames.bind(styles);
 
+const listKeys = ["Avatar", "Name", "Number"];
+
 function AttendLists() {
   //Redux Store
   const storeAttendLists = useSelector(
@@ -17,25 +19,28 @@ function AttendLists() {
   return (
     <div>
       <HeadTitle headTag="h3">參與抽獎名單</HeadTitle>
-      <Lists className={cx("attend-lists")}>
-        {storeAttendLists.map((person, index) => (
-          <Lists.Item
-            key={index}
-            className={cx("lists-item")}
-            prefix={
+
+      <div>
+        <Lists className={cx("attend-lists")}>
+          <Lists.Item className={cx("lists-item", "lists-item__title")}>
+            {listKeys.map((listKey, index) => (
+              <div key={index}>{listKey}</div>
+            ))}
+          </Lists.Item>
+          {storeAttendLists.map((person, index) => (
+            <Lists.Item key={index} className={cx("lists-item")}>
               <div>
                 <Avatar
-                  className={cx("lists-item__prefix")}
+                  className={cx("lists-item__avatar")}
                   gender={person.gender}
                 />
               </div>
-            }
-            suffix={<div>(Id:{person.id})</div>}
-          >
-            <div>{person.name}</div>
-          </Lists.Item>
-        ))}
-      </Lists>
+              <div>{person.name}</div>
+              <div>{person.id}</div>
+            </Lists.Item>
+          ))}
+        </Lists>
+      </div>
     </div>
   );
 }
