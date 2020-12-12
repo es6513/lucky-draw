@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import classnames from "classnames/bind";
 import HeadTitle from "components/HeadTitle";
 import Lists from "components/Lists";
@@ -15,7 +15,6 @@ function AttendLists() {
   const storeAttendLists = useSelector(
     (state) => state.listsReducer.attendLists
   );
-
   return (
     <div>
       <HeadTitle headTag="h3">參與抽獎名單</HeadTitle>
@@ -36,7 +35,7 @@ function AttendLists() {
                 />
               </div>
               <div>{person.name}</div>
-              <div>{person.id}</div>
+              <div>{person.id + 1}</div>
             </Lists.Item>
           ))}
         </Lists>
@@ -45,4 +44,4 @@ function AttendLists() {
   );
 }
 
-export default AttendLists;
+export default React.memo(AttendLists);

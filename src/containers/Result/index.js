@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleShowResult } from "store/modules/result/actions";
 import Lightbox from "components/Lightbox";
+import Button from "components/Button";
 
 function Result() {
   const dispatch = useDispatch();
@@ -11,11 +12,9 @@ function Result() {
 
   const luckyPerson = useSelector((state) => state.listsReducer.luckyPerson);
   return (
-    <div>
-      <Lightbox title="抽獎結果" handleClose={closeResult}>
-        {luckyPerson.name}
-      </Lightbox>
-    </div>
+    <Lightbox title="抽獎結果" handleClose={closeResult}>
+      {luckyPerson.name}
+    </Lightbox>
   );
 }
 

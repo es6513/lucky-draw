@@ -31,4 +31,4 @@ function TimeControl() {
   );
 }
 
-export default TimeControl;
+export default React.memo(TimeControl);

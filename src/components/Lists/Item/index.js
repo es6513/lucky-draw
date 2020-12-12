@@ -8,7 +8,6 @@ function Item({ className, children, ...restProps }) {
   return (
     <li className={cx(className)} {...restProps}>
       {children}
-      {}
     </li>
   );
 }

@@ -1,0 +1,51 @@
+
+@keyframes slideFromTop {
+  from {top: -100px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+$space-basis: 16px;
+
+.light-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  height: 100%; 
+  position: fixed;
+  left: 0;
+  top: 0;
+  outline: none;
+  z-index: 1000; 
+  background-color: rgba(0,0,0,0.4);
+  color: #000;
+  overflow: auto; 
+
+  .light-box-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 1.5 * $space-basis;
+    width: 40 * $space-basis;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 0.5 * $space-basis;
+    animation-name: slideFromTop;
+    animation-duration: 0.6s
+  }
+
+  .light-box-header{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5 * $space-basis;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .light-box-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+}
