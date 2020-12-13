@@ -4,17 +4,17 @@ import classnames from "classnames/bind";
 import styles from "./style.moduls.scss";
 const cx = classnames.bind(styles);
 
-function ErrorMessage({ className, message, ...restProps }) {
+function ErrorHint({ className, message, ...restProps }) {
   return <div className={cx("error-message")}>{message}</div>;
 }
 
-export default ErrorMessage;
+export default ErrorHint;
 
-ErrorMessage.propTypes = {
+ErrorHint.propTypes = {
   message: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 
-ErrorMessage.defaultProps = {
+ErrorHint.defaultProps = {
   className: "",
 };

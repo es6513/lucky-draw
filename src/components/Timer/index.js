@@ -4,9 +4,11 @@ import classnames from "classnames/bind";
 import { useForm } from "react-hook-form";
 import { SECONDS_PER_MINUTE } from "utils/timeConstants";
 import Button from "components/Button";
-import ErrorMessage from "components/ErrorMessage";
+import ErrorHint from "components/ErrorHint";
+import inputErrorMessages from "utils/errorMessage";
 
 import styles from "./style.module.scss";
+import HeadTitle from "components/HeadTitle";
 
 const cx = classnames.bind(styles);
 
@@ -19,7 +21,7 @@ function Timer({ timeupCallback }) {
   const { register: formRegister, errors, handleSubmit } = useForm({
     mode: "all",
   });
-
+  console.log(errors.inputMinutes);
   const isInputMinuetsInvalid = errors.inputMinutes ? true : false;
 
   //Timer process
@@ -104,14 +106,18 @@ function Timer({ timeupCallback }) {
         >
           設定
         </Button>
-        <div className={cx("timer-input-error-message")}>
-          {errors.inputMinutes?.type === "required" && "請輸入倒數時間"}
-          {errors.inputMinutes?.type === "number" && "請輸入數字"}
-          {errors.inputMinutes?.type === "bePositive" && "請輸入大於0之數字"}
-        </div>
+        {errors.inputMinutes ? (
+          <ErrorHint message={inputErrorMessages[errors.inputMinutes?.type]} />
+        ) : null}
       </form>
       <div className={cx("timer-remaintime")}>{remainTime}</div>
-      <div className={cx("timer-hint")}>若不足1秒,則以1秒計算</div>
+      <div className={cx("timer-hint")}>
+        說明:
+        <br />
+        秒數為四捨五入後的結果;
+        <br />
+        若不足1秒,則以1秒計算;
+      </div>
     </div>
   );
 }
