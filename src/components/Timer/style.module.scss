@@ -11,7 +11,7 @@
     border-radius:  $space-basis;
     padding: 0.5 * $space-basis;
 
-    &-invalid{
+    &__invalid{
       border: solid 1px $invalid;
     }
 

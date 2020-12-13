@@ -3,7 +3,6 @@ import { PropTypes } from "prop-types";
 import classnames from "classnames/bind";
 import { useForm } from "react-hook-form";
 import { SECONDS_PER_MINUTE } from "utils/timeConstants";
-import Input from "components/Input";
 import Button from "components/Button";
 
 import styles from "./style.module.scss";
@@ -18,8 +17,9 @@ function Timer({ timeupCallback }) {
   //Timer Form
   const { register: formRegister, errors, handleSubmit } = useForm({
     mode: "all",
-    criteriaMode: "all",
   });
+
+  const isInputMinuetsInvalid = errors.inputMinutes ? true : false;
 
   //Timer process
   const setTimerSeconds = (data) => {
@@ -49,6 +49,7 @@ function Timer({ timeupCallback }) {
   };
 
   const handleCountdownProcess = (data) => {
+    console.log("count down");
     clearInterval(countdownTimer.current);
     setTimerSeconds(data);
     startCountdown();
@@ -78,10 +79,12 @@ function Timer({ timeupCallback }) {
       <form onSubmit={handleSubmit(handleCountdownProcess)}>
         <input
           name="inputMinutes"
-          className={cx("timer-input")}
+          className={cx("timer-input", {
+            "timer-input__invalid": isInputMinuetsInvalid,
+          })}
           ref={formRegister({ required: true })}
         ></input>
-        <span className={cx("timer-input__prefix")}>分鐘</span>
+        <span className={cx("timer-input__suffix")}>分鐘</span>
         <Button
           type="submit"
           data-color="submit"
@@ -91,10 +94,12 @@ function Timer({ timeupCallback }) {
         >
           設定
         </Button>
+
         <div className={cx("timer-input-error-message")}>
-          {errors.inputMinutes?.type === "required" && "Your input is required"}
+          {errors.inputMinutes?.type === "required" && "請輸入倒數時間"}
         </div>
       </form>
+
       <div className={cx("timer-remaintime")}>{remainTime}</div>
     </div>
   );
