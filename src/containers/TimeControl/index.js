@@ -1,9 +1,11 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useCallback } from "react";
+import { useDispatch } from "react-redux";
 import { toggleShowResult } from "store/modules/result/actions";
 import { setLuckyPerson } from "store/modules/attendLists/actions";
 import HeadTitle from "components/HeadTitle";
 import Timer from "components/Timer";
+import Count from "components/Count";
+import Button from "components/Button";
 import { config } from "config";
 const { css } = config;
 const { ROOT_CLASS } = css;
@@ -19,10 +21,10 @@ function TimeControl() {
     dispatch(setLuckyPerson());
   };
 
-  const timeupCallback = () => {
+  const timeupCallback = useCallback(() => {
     drawLuckyPerson();
     openResult();
-  };
+  }, [dispatch]);
 
   return (
     <div className={`${ROOT_CLASS}__time-control`}>

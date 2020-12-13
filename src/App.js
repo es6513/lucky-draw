@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import TimeControl from "containers/TimeControl";
 import AttendLists from "containers/AttendLists";
 import Result from "containers/Result";

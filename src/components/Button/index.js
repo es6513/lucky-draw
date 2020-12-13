@@ -5,6 +5,8 @@ import styles from "./style.module.scss";
 const cx = classnames.bind(styles);
 
 function Button({ className, handleClick, children, ...restProps }) {
+  console.log("render button");
+
   return (
     <button
       className={cx(className, "button")}

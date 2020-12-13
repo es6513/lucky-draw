@@ -19,9 +19,8 @@ function Timer({ timeupCallback }) {
   const { register: formRegister, errors, handleSubmit } = useForm({
     mode: "all",
   });
-  console.log(errors.inputMinutes);
   const isInputMinuetsInvalid = errors.inputMinutes ? true : false;
-
+  console.log("timer render");
   //Timer process
   const setTimerSeconds = (data) => {
     let { inputMinutes } = data;
