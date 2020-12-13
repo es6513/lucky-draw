@@ -8,7 +8,7 @@ import styles from "./style.module.scss";
 
 const cx = classnames.bind(styles);
 
-const listKeys = ["Avatar", "Name", "Number"];
+const listKeys = ["Avatar", "Name", "ID"];
 
 function AttendLists() {
   //Redux Store
@@ -34,7 +34,7 @@ function AttendLists() {
                 />
               </div>
               <div>{person.name}</div>
-              <div>{person.id + 1}</div>
+              <div>{person.id}</div>
             </Lists.Item>
           ))}
         </Lists>

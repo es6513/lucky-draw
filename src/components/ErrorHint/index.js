@@ -5,7 +5,11 @@ import styles from "./style.moduls.scss";
 const cx = classnames.bind(styles);
 
 function ErrorHint({ className, message, ...restProps }) {
-  return <div className={cx("error-message")}>{message}</div>;
+  return (
+    <div className={cx("error-message")} {...restProps}>
+      {message}
+    </div>
+  );
 }
 
 export default ErrorHint;

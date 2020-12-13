@@ -6,9 +6,7 @@ import { SECONDS_PER_MINUTE } from "utils/timeConstants";
 import Button from "components/Button";
 import ErrorHint from "components/ErrorHint";
 import inputErrorMessages from "utils/errorMessage";
-
 import styles from "./style.module.scss";
-import HeadTitle from "components/HeadTitle";
 
 const cx = classnames.bind(styles);
 
@@ -82,7 +80,10 @@ function Timer({ timeupCallback }) {
   return (
     <div className={cx("timer")}>
       <div>Render :{render.current++}</div>
-      <form onSubmit={handleSubmit(handleCountdownProcess)}>
+      <form
+        className={cx("timer-form")}
+        onSubmit={handleSubmit(handleCountdownProcess)}
+      >
         <input
           name="inputMinutes"
           className={cx("timer-input", {
@@ -114,9 +115,9 @@ function Timer({ timeupCallback }) {
       <div className={cx("timer-hint")}>
         說明:
         <br />
-        秒數為四捨五入後的結果;
+        倒數秒數為四捨五入後的結果;
         <br />
-        若不足1秒,則以1秒計算;
+        若整體時間不足1秒,則以1秒計算;
       </div>
     </div>
   );
