@@ -1,7 +1,5 @@
 @import "../../styles/settings.variables";
 
-
-
 .input{
   outline: none;
   height: 2 * $space-basis;
@@ -9,5 +7,4 @@
   border: solid 1px $gray-200;
   border-radius:  $space-basis;
   padding: 0.5 * $space-basis;
-  
 }

@@ -1,8 +1,27 @@
 @import "../../styles/settings.variables";
 
 .timer{
+
+  &-input{
+    position: relative;
+    outline: none;
+    height: 2 * $space-basis;
+    font-size: $space-basis;
+    border: solid 1px $gray-200;
+    border-radius:  $space-basis;
+    padding: 0.5 * $space-basis;
+
+    &-invalid{
+      border: solid 1px $invalid;
+    }
+
+    &-error-message{
+      color:$invalid;
+      margin-top: 0.5 * $space-basis;
+    }
+  }  
  
-  &-input__prefix{
+  &-input__suffix{
     margin-left: $space-basis;
   }
   

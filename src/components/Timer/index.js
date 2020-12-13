@@ -16,7 +16,7 @@ function Timer({ timeupCallback }) {
   const countdownTimer = useRef();
   const render = useRef(0);
   //Timer Form
-  const { register: formRegister, formState, handleSubmit } = useForm({
+  const { register: formRegister, errors, handleSubmit } = useForm({
     mode: "all",
     criteriaMode: "all",
   });
@@ -76,12 +76,11 @@ function Timer({ timeupCallback }) {
     <div className={cx("timer")}>
       <div>Render :{render.current++}</div>
       <form onSubmit={handleSubmit(handleCountdownProcess)}>
-        <Input
-          data-size="md"
+        <input
+          name="inputMinutes"
           className={cx("timer-input")}
-          inputName="inputMinutes"
-          useFormRef={formRegister}
-        />
+          ref={formRegister({ required: true })}
+        ></input>
         <span className={cx("timer-input__prefix")}>分鐘</span>
         <Button
           type="submit"
@@ -92,6 +91,9 @@ function Timer({ timeupCallback }) {
         >
           設定
         </Button>
+        <div className={cx("timer-input-error-message")}>
+          {errors.inputMinutes?.type === "required" && "Your input is required"}
+        </div>
       </form>
       <div className={cx("timer-remaintime")}>{remainTime}</div>
     </div>
