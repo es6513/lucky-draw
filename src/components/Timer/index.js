@@ -19,6 +19,7 @@ function Timer({ timeupCallback }) {
     mode: "all",
   });
 
+  console.log(errors);
   const isInputMinuetsInvalid = errors.inputMinutes ? true : false;
 
   //Timer process
@@ -82,7 +83,7 @@ function Timer({ timeupCallback }) {
           className={cx("timer-input", {
             "timer-input__invalid": isInputMinuetsInvalid,
           })}
-          ref={formRegister({ required: true })}
+          ref={formRegister({ required: true, min: 1, pattern: /^[0-9]+$/ })}
         ></input>
         <span className={cx("timer-input__suffix")}>分鐘</span>
         <Button
@@ -94,9 +95,10 @@ function Timer({ timeupCallback }) {
         >
           設定
         </Button>
-
         <div className={cx("timer-input-error-message")}>
           {errors.inputMinutes?.type === "required" && "請輸入倒數時間"}
+          {errors.inputMinutes?.type === "min" && "最少1分鐘"}
+          {errors.inputMinutes?.type === "pattern" && "請輸入正整數"}
         </div>
       </form>
 
