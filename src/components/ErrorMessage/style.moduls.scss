@@ -1,0 +1,6 @@
+@import "../../styles/settings.variables";
+
+.error-message{
+  color: $invalid;
+  margin-top: 0.5 * $space-basis;
+}

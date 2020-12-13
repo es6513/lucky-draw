@@ -4,6 +4,7 @@ import classnames from "classnames/bind";
 import { useForm } from "react-hook-form";
 import { SECONDS_PER_MINUTE } from "utils/timeConstants";
 import Button from "components/Button";
+import ErrorMessage from "components/ErrorMessage";
 
 import styles from "./style.module.scss";
 
@@ -19,13 +20,15 @@ function Timer({ timeupCallback }) {
     mode: "all",
   });
 
-  console.log(errors);
   const isInputMinuetsInvalid = errors.inputMinutes ? true : false;
 
   //Timer process
   const setTimerSeconds = (data) => {
     let { inputMinutes } = data;
-    let inputSeconds = parseFloat(inputMinutes * SECONDS_PER_MINUTE);
+    let inputSeconds =
+      parseFloat(inputMinutes * SECONDS_PER_MINUTE) < 1
+        ? 1
+        : Math.round(parseFloat(inputMinutes * SECONDS_PER_MINUTE));
     refCountTime.current = inputSeconds;
     setCountdownSeconds(inputSeconds);
   };
@@ -83,7 +86,13 @@ function Timer({ timeupCallback }) {
           className={cx("timer-input", {
             "timer-input__invalid": isInputMinuetsInvalid,
           })}
-          ref={formRegister({ required: true, min: 1, pattern: /^[0-9]+$/ })}
+          ref={formRegister({
+            required: true,
+            validate: {
+              number: (value) => !isNaN(value),
+              bePositive: (value) => value > 0,
+            },
+          })}
         ></input>
         <span className={cx("timer-input__suffix")}>分鐘</span>
         <Button
@@ -97,12 +106,12 @@ function Timer({ timeupCallback }) {
         </Button>
         <div className={cx("timer-input-error-message")}>
           {errors.inputMinutes?.type === "required" && "請輸入倒數時間"}
-          {errors.inputMinutes?.type === "min" && "最少1分鐘"}
-          {errors.inputMinutes?.type === "pattern" && "請輸入正整數"}
+          {errors.inputMinutes?.type === "number" && "請輸入數字"}
+          {errors.inputMinutes?.type === "bePositive" && "請輸入大於0之數字"}
         </div>
       </form>
-
       <div className={cx("timer-remaintime")}>{remainTime}</div>
+      <div className={cx("timer-hint")}>若不足1秒,則以1秒計算</div>
     </div>
   );
 }
