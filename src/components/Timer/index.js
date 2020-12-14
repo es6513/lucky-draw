@@ -11,16 +11,19 @@ import styles from "./style.module.scss";
 const cx = classnames.bind(styles);
 
 function Timer({ timeupCallback }) {
+  //State & Ref
   const [countdownSeconds, setCountdownSeconds] = useState(0);
   const refCountTime = useRef();
   const countdownTimer = useRef();
   const render = useRef(0);
+
   //Timer Form
   const { register: formRegister, errors, handleSubmit } = useForm({
     mode: "all",
   });
   const isInputMinuetsInvalid = errors.inputMinutes ? true : false;
   console.log("timer render");
+  console.log(errors);
   //Timer process
   const setTimerSeconds = (data) => {
     let { inputMinutes } = data;
@@ -90,6 +93,7 @@ function Timer({ timeupCallback }) {
           })}
           ref={formRegister({
             required: true,
+            pattern: /^(?!0\d)(?:\d+|\d{1,3}(?:,\d{3})+)(?:[.,]\d+)?$/,
             validate: {
               number: (value) => !isNaN(value),
               bePositive: (value) => value > 0,
@@ -114,6 +118,10 @@ function Timer({ timeupCallback }) {
       <div className={cx("timer-hint")}>
         說明:
         <br />
+        倒數時間可接受任何正數 (ex:2 ,10, 0.5);
+        <br />
+        特殊字元, 負數, 或其他錯誤格式會無效 (ex: +002, 02 -1, 00.5);
+        <br />
         倒數秒數為四捨五入後的結果;
         <br />
         若整體時間不足1秒,則以1秒計算;
@@ -122,7 +130,7 @@ function Timer({ timeupCallback }) {
   );
 }
 
-export default Timer;
+export default React.memo(Timer);
 
 Timer.propTypes = {
   timeupCallback: PropTypes.func.isRequired,

@@ -1,20 +1,26 @@
 @import "../../styles/settings.variables";
 
-.result{
+$result-wrapper: #{$root-class}__result-wrapper;
 
-  &-avatar{
-    width: 160px;
-    height: 160px;
-    margin-bottom: 1.25 * $space-basis;
-  }
+#{$result-wrapper}{
+  
+  .result{
 
-  &-name{
-    margin-bottom:  $space-basis;
+    &-avatar{
+      width: 160px;
+      height: 160px;
+      margin-bottom: 1.25 * $space-basis;
+    }
+  
+    &-name{
+      margin-bottom:  $space-basis;
+    }
+  
+    &-number{
+      margin: 0;
+    }
   }
-
-  &-number{
-    margin: 0;
-  }
+  
 }
 
 

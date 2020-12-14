@@ -5,6 +5,9 @@ import HeadTitle from "components/HeadTitle";
 import Lists from "components/Lists";
 import Avatar from "components/Avatar";
 import styles from "./style.module.scss";
+import { config } from "config";
+const { css } = config;
+const { ROOT_CLASS } = css;
 
 const cx = classnames.bind(styles);
 
@@ -16,7 +19,7 @@ function AttendLists() {
     (state) => state.listsReducer.attendLists
   );
   return (
-    <div>
+    <div className={cx(`${ROOT_CLASS}__attend-lists-wrapper`)}>
       <HeadTitle headTag="h3">參與抽獎名單</HeadTitle>
       <div>
         <Lists className={cx("attend-lists")}>

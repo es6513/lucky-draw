@@ -1,38 +1,44 @@
 @import "../../styles/settings.variables";
 
-.attend-lists {
- height: 600px;
- width: 95%;
- margin-top: 1.25 * $space-basis;
- border:solid 1px $black;
- overflow-x: hidden;
+$attend-lists-wrapper: #{$root-class}__attend-lists-wrapper;
 
- .lists-item-title{
-    position: sticky;
-    top: 0;
-    background-color: $gray-200;
-  }
-
- .lists-item, .lists-item-title{
-    margin-bottom: 1.25 * $space-basis;
-    display: flex;
-    align-items: center;
-    
-   > * {
-     flex-basis: (100% / 3);
+#{$attend-lists-wrapper}{
+  .attend-lists {
+    height: 600px;
+    width: 95%;
+    margin-top: 1.25 * $space-basis;
+    border:solid 1px $black;
+    overflow-x: hidden;
+   
+    .lists-item-title{
+       position: sticky;
+       top: 0;
+       background-color: $gray-200;
+     }
+   
+    .lists-item, .lists-item-title{
+       margin-bottom: 1.25 * $space-basis;
+       display: flex;
+       align-items: center;
+       
+      > * {
+        flex-basis: (100% / 3);
+      }
+    }
+   
+    .lists-item:first-child{
+       padding: 0.75 * $space-basis
+     }
+   
+    .lists-item:not(:first-child){
+       margin-left: 1.25 * $space-basis;
+       margin-right: 1.25 * $space-basis;
+    }
+   
+    .lists-item-avatar{
+       height: 3.75 * $space-basis
+     }
    }
- }
-
- .lists-item:first-child{
-    padding: 0.75 * $space-basis
-  }
-
- .lists-item:not(:first-child){
-    margin-left: 1.25 * $space-basis;
-    margin-right: 1.25 * $space-basis;
- }
-
- .lists-item-avatar{
-    height: 3.75 * $space-basis
-  }
+   
 }
+
