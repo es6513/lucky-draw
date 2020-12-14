@@ -36,13 +36,13 @@ function TimeControl() {
       <HeadTitle headTag="h3">抽獎時間</HeadTitle>
       <Timer timeupCallback={timeupCallback} />
       <div className={cx("timer-control-hint")}>
-        說明:
+        倒數時間說明:
         <br />
-        1. 倒數分鐘可接受 0 ~ 150,119,987,579,016 分鐘;
+        1. 可接受 0 ~ 150,119,987,579,016 分鐘;
         <br />
-        2. 倒數時間可接受任何正數 (ex:2 ,10, 0.5);
+        2. 可接受任何正數 (ex:2 ,10, 0.5);
         <br />
-        3. 含特殊字元, 負數, 空格或其他錯誤格式會無效 (ex: +3, 02, -1, 00.5);
+        3. 含特殊字元, 負數, 空格或其他錯誤格式等會無效 (ex: +3, 02, -1, 00.5);
         <br />
         4. 倒數秒數為四捨五入後的結果;
         <br />
