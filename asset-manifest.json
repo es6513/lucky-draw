@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lucky-draw/static/css/main.c5cafb0c.chunk.css",
-    "main.js": "/lucky-draw/static/js/main.c85b1b4d.chunk.js",
-    "main.js.map": "/lucky-draw/static/js/main.c85b1b4d.chunk.js.map",
+    "main.js": "/lucky-draw/static/js/main.bd66ceb2.chunk.js",
+    "main.js.map": "/lucky-draw/static/js/main.bd66ceb2.chunk.js.map",
     "runtime-main.js": "/lucky-draw/static/js/runtime-main.e679d562.js",
     "runtime-main.js.map": "/lucky-draw/static/js/runtime-main.e679d562.js.map",
     "static/js/2.f9e7e3bc.chunk.js": "/lucky-draw/static/js/2.f9e7e3bc.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.e679d562.js",
     "static/js/2.f9e7e3bc.chunk.js",
     "static/css/main.c5cafb0c.chunk.css",
-    "static/js/main.c85b1b4d.chunk.js"
+    "static/js/main.bd66ceb2.chunk.js"
   ]
 }
