@@ -6,6 +6,7 @@ import Lists from "components/Lists";
 import Avatar from "components/Avatar";
 import styles from "./style.module.scss";
 import { config } from "config";
+
 const { css } = config;
 const { ROOT_CLASS } = css;
 

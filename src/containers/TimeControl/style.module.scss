@@ -1,0 +1,14 @@
+@import "../../styles/settings.variables";
+
+$timer-control-wrapper: #{$root-class}__timer-control-wrapper;
+
+#{$timer-control-wrapper}{
+
+  .timer-control-hint{
+    margin-top: 3 * $space-basis;
+    line-height: 2 * $space-basis;
+  }
+  
+}
+
+

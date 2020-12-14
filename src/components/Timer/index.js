@@ -115,17 +115,6 @@ function Timer({ timeupCallback }) {
         ) : null}
       </form>
       <div className={cx("timer-remaintime")}>{remainTime}</div>
-      <div className={cx("timer-hint")}>
-        說明:
-        <br />
-        倒數時間可接受任何正數 (ex:2 ,10, 0.5);
-        <br />
-        特殊字元, 負數, 或其他錯誤格式會無效 (ex: +002, 02 -1, 00.5);
-        <br />
-        倒數秒數為四捨五入後的結果;
-        <br />
-        若整體時間不足1秒,則以1秒計算;
-      </div>
     </div>
   );
 }
