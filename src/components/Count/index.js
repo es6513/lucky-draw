@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { PropTypes } from "prop-types";
 
-function Count({ count }) {
-  return <div>{count}</div>;
+function Count() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <button onClick={() => setCount((count) => count + 1)}>Add Count</button>
+      <div>{count}</div>
+    </div>
+  );
 }
 
-export default Count;
-
-Count.propTypes = {
-  count: PropTypes.number.isRequired,
-};
+export default React.memo(Count);

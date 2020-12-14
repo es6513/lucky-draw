@@ -12,7 +12,7 @@ function ErrorHint({ className, message, ...restProps }) {
   );
 }
 
-export default ErrorHint;
+export default React.memo(ErrorHint);
 
 ErrorHint.propTypes = {
   message: PropTypes.string.isRequired,

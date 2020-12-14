@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import TimeControl from "containers/TimeControl";
 import AttendLists from "containers/AttendLists";
 import Result from "containers/Result";
 import "styles/main.scss";
+import Count from "components/Count";
 
 import { config } from "./config";
 const { css } = config;
@@ -14,17 +15,8 @@ function App() {
     (state) => state.resultReducer.isResultShowed
   );
 
-  const countObj = useSelector((state) => ({
-    count2: state.resultReducer.count2,
-  }));
-  const dispatch = useDispatch();
-  const addCount = () => {
-    dispatch({ type: "ADD_COUNT2" });
-  };
   return (
     <div className={`${ROOT_CLASS}`}>
-      Count2:{countObj.count2}
-      <button onClick={addCount}>ADD_COUNT</button>
       <TimeControl />
       <AttendLists />
       {isResultShowed ? <Result /> : null}

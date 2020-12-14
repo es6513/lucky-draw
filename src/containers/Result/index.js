@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import classnames from "classnames/bind";
 import { toggleShowResult } from "store/modules/result/actions";
@@ -16,9 +16,10 @@ const cx = classnames.bind(styles);
 function Result() {
   //Redux Store
   const dispatch = useDispatch();
-  const closeResult = () => {
+
+  const closeResult = useCallback(() => {
     dispatch(toggleShowResult({ isResultShowed: false }));
-  };
+  }, [dispatch]);
 
   const luckyPerson = useSelector((state) => state.listsReducer.luckyPerson);
   return (

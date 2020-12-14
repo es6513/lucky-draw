@@ -5,7 +5,10 @@ import { useForm } from "react-hook-form";
 import { SECONDS_PER_MINUTE } from "utils/timeConstants";
 import Button from "components/Button";
 import ErrorHint from "components/ErrorHint";
-import inputErrorMessages from "utils/errorMessage";
+import {
+  inputMinutesValidation,
+  inputErrorMessages,
+} from "utils/formValidation";
 import styles from "./style.module.scss";
 
 const cx = classnames.bind(styles);
@@ -23,7 +26,6 @@ function Timer({ timeupCallback }) {
     mode: "all",
   });
   const isInputMinuetsInvalid = errors.inputMinutes ? true : false;
-  console.log("timer render");
 
   //Timer process
   const setTimerSeconds = (data) => {
@@ -44,11 +46,10 @@ function Timer({ timeupCallback }) {
         refCountTime.current = 0;
       }
       if (refCountTime.current <= 0) {
-        console.log("end up");
         clearInterval(timerId);
         timeupCallback();
       }
-      //setCountdownSeconds(refCountTime.current);
+      setCountdownSeconds(refCountTime.current);
     };
     countdownTimer.current = setInterval(() => {
       countDown(countdownTimer.current);
@@ -56,7 +57,6 @@ function Timer({ timeupCallback }) {
   };
 
   const handleCountdownProcess = (data) => {
-    console.log("submit");
     clearInterval(countdownTimer.current);
     setTimerSeconds(data);
     startCountdown();
@@ -94,14 +94,7 @@ function Timer({ timeupCallback }) {
             "timer-input__invalid": isInputMinuetsInvalid,
           })}
           ref={(e) => {
-            formRegister(e, {
-              required: true,
-              pattern: /^(?!0\d)(?:\d+)(?:[.,]\d+)?$/,
-              validate: {
-                number: (value) => !isNaN(value),
-                bePositive: (value) => value > 0,
-              },
-            });
+            formRegister(e, inputMinutesValidation);
             inputRef.current = e;
           }}
         />

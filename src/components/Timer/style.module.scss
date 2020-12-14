@@ -26,7 +26,7 @@
   }  
  
   &-input__suffix{
-    margin-left: $space-basis;
+    margin-left: 0.5 * $space-basis;
   }
   
   &-submit-button{
@@ -35,7 +35,7 @@
   }
 
   &-remaintime{
-    font-size: 5 * $space-basis;
+    font-size: 3 * $space-basis;
     margin-top: 3 * $space-basis;
   }
 
