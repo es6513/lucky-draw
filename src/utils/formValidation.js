@@ -1,11 +1,11 @@
-import { SECONDS_PER_MINUTE } from "./timeConstants";
+import { COUNTDOWN_MAX_MINUTES } from "./timeConstants";
 
 export const inputMinutesValidation = {
   required: true,
   pattern: /^(?!0\d)(?:\d+)(?:[.,]\d+)?$/,
   validate: {
     isNumber: (value) => !isNaN(value),
-    isOverMax: (value) => value < Number.MAX_SAFE_INTEGER / SECONDS_PER_MINUTE,
+    isOverMax: (value) => value <= COUNTDOWN_MAX_MINUTES,
     isPositive: (value) => value > 0,
   },
 };
