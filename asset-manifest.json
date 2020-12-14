@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/lucky-draw/static/css/main.c5cafb0c.chunk.css",
-    "main.js": "/lucky-draw/static/js/main.bd66ceb2.chunk.js",
-    "main.js.map": "/lucky-draw/static/js/main.bd66ceb2.chunk.js.map",
-    "runtime-main.js": "/lucky-draw/static/js/runtime-main.e679d562.js",
-    "runtime-main.js.map": "/lucky-draw/static/js/runtime-main.e679d562.js.map",
-    "static/js/2.f9e7e3bc.chunk.js": "/lucky-draw/static/js/2.f9e7e3bc.chunk.js",
-    "static/js/2.f9e7e3bc.chunk.js.map": "/lucky-draw/static/js/2.f9e7e3bc.chunk.js.map",
-    "static/js/3.e791bdac.chunk.js": "/lucky-draw/static/js/3.e791bdac.chunk.js",
-    "static/js/3.e791bdac.chunk.js.map": "/lucky-draw/static/js/3.e791bdac.chunk.js.map",
+    "main.css": "/lucky-draw/static/css/main.f7fa402d.chunk.css",
+    "main.js": "/lucky-draw/static/js/main.2d58f88c.chunk.js",
+    "main.js.map": "/lucky-draw/static/js/main.2d58f88c.chunk.js.map",
+    "runtime-main.js": "/lucky-draw/static/js/runtime-main.d1db0efd.js",
+    "runtime-main.js.map": "/lucky-draw/static/js/runtime-main.d1db0efd.js.map",
+    "static/js/2.3f7cc261.chunk.js": "/lucky-draw/static/js/2.3f7cc261.chunk.js",
+    "static/js/2.3f7cc261.chunk.js.map": "/lucky-draw/static/js/2.3f7cc261.chunk.js.map",
+    "static/js/3.c2b42b23.chunk.js": "/lucky-draw/static/js/3.c2b42b23.chunk.js",
+    "static/js/3.c2b42b23.chunk.js.map": "/lucky-draw/static/js/3.c2b42b23.chunk.js.map",
     "index.html": "/lucky-draw/index.html",
-    "static/css/main.c5cafb0c.chunk.css.map": "/lucky-draw/static/css/main.c5cafb0c.chunk.css.map",
-    "static/js/2.f9e7e3bc.chunk.js.LICENSE.txt": "/lucky-draw/static/js/2.f9e7e3bc.chunk.js.LICENSE.txt",
+    "static/css/main.f7fa402d.chunk.css.map": "/lucky-draw/static/css/main.f7fa402d.chunk.css.map",
+    "static/js/2.3f7cc261.chunk.js.LICENSE.txt": "/lucky-draw/static/js/2.3f7cc261.chunk.js.LICENSE.txt",
     "static/media/manAvatar.b0407046.svg": "/lucky-draw/static/media/manAvatar.b0407046.svg",
     "static/media/womanAvatar.22a86059.svg": "/lucky-draw/static/media/womanAvatar.22a86059.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e679d562.js",
-    "static/js/2.f9e7e3bc.chunk.js",
-    "static/css/main.c5cafb0c.chunk.css",
-    "static/js/main.bd66ceb2.chunk.js"
+    "static/js/runtime-main.d1db0efd.js",
+    "static/js/2.3f7cc261.chunk.js",
+    "static/css/main.f7fa402d.chunk.css",
+    "static/js/main.2d58f88c.chunk.js"
   ]
 }
