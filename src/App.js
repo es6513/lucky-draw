@@ -4,7 +4,6 @@ import TimeControl from "containers/TimeControl";
 import AttendLists from "containers/AttendLists";
 import Result from "containers/Result";
 import "styles/main.scss";
-import "styles/reset.scss";
 
 import { config } from "./config";
 const { css } = config;
