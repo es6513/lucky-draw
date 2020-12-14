@@ -115,7 +115,7 @@ function Timer({ timeupCallback }) {
   );
 }
 
-export default React.memo(Timer);
+export default Timer;
 
 Timer.propTypes = {
   timeupCallback: PropTypes.func.isRequired,

@@ -1,7 +1,5 @@
 import { SECONDS_PER_MINUTE } from "./timeConstants";
 
-const inputFormat = /^(?!0\d)(?:\d+)(?:[.,]\d+)?$/;
-
 export const inputMinutesValidation = {
   required: true,
   pattern: /^(?!0\d)(?:\d+)(?:[.,]\d+)?$/,

@@ -5,6 +5,7 @@ import { toggleShowResult } from "store/modules/result/actions";
 import { setLuckyPerson } from "store/modules/attendLists/actions";
 import HeadTitle from "components/HeadTitle";
 import Timer from "components/Timer";
+
 import styles from "./style.module.scss";
 import { config } from "config";
 

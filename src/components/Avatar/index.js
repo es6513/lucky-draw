@@ -17,7 +17,7 @@ function Avatar({ className, gender }) {
   );
 }
 
-export default React.memo(Avatar);
+export default Avatar;
 
 Avatar.propTypes = {
   className: PropTypes.string,

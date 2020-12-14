@@ -10,4 +10,4 @@ HeadTitle.propTypes = {
   children: PropTypes.string.isRequired,
 };
 
-export default React.memo(HeadTitle);
+export default HeadTitle;
