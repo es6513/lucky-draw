@@ -1,10 +1,9 @@
-import React, { useCallback, useEffect, useRef } from "react";
-import { useSelector, useDispatch, shallowEqual } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import TimeControl from "containers/TimeControl";
 import AttendLists from "containers/AttendLists";
 import Result from "containers/Result";
 import "styles/main.scss";
-import Count from "components/Count";
 
 import { config } from "./config";
 const { css } = config;

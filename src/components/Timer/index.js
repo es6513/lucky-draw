@@ -19,7 +19,6 @@ function Timer({ timeupCallback }) {
   const refCountTime = useRef();
   const countdownTimer = useRef();
   const inputRef = useRef();
-  const render = useRef(0);
 
   //Timer Form
   const { register: formRegister, errors, handleSubmit } = useForm({
@@ -83,7 +82,6 @@ function Timer({ timeupCallback }) {
   ]);
   return (
     <div className={cx("timer")}>
-      <div>Render :{render.current++}</div>
       <form
         className={cx("timer-form")}
         onSubmit={handleSubmit(handleCountdownProcess)}

@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import Item from "./Item/index";
 
 function Lists({ className, children, ...restProps }) {
+  console.log("lists render");
   return (
     <ul className={className} {...restProps}>
       {children}
