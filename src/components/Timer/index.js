@@ -15,6 +15,7 @@ function Timer({ timeupCallback }) {
   const [countdownSeconds, setCountdownSeconds] = useState(0);
   const refCountTime = useRef();
   const countdownTimer = useRef();
+  const inputRef = useRef();
   const render = useRef(0);
 
   //Timer Form
@@ -23,7 +24,7 @@ function Timer({ timeupCallback }) {
   });
   const isInputMinuetsInvalid = errors.inputMinutes ? true : false;
   console.log("timer render");
-  console.log(errors);
+
   //Timer process
   const setTimerSeconds = (data) => {
     let { inputMinutes } = data;
@@ -47,7 +48,7 @@ function Timer({ timeupCallback }) {
         clearInterval(timerId);
         timeupCallback();
       }
-      setCountdownSeconds(refCountTime.current);
+      //setCountdownSeconds(refCountTime.current);
     };
     countdownTimer.current = setInterval(() => {
       countDown(countdownTimer.current);
@@ -55,10 +56,11 @@ function Timer({ timeupCallback }) {
   };
 
   const handleCountdownProcess = (data) => {
-    console.log("count down");
+    console.log("submit");
     clearInterval(countdownTimer.current);
     setTimerSeconds(data);
     startCountdown();
+    inputRef.current.blur();
   };
 
   useEffect(() => {
@@ -91,15 +93,18 @@ function Timer({ timeupCallback }) {
           className={cx("timer-input", {
             "timer-input__invalid": isInputMinuetsInvalid,
           })}
-          ref={formRegister({
-            required: true,
-            pattern: /^(?!0\d)(?:\d+|\d{1,3}(?:,\d{3})+)(?:[.,]\d+)?$/,
-            validate: {
-              number: (value) => !isNaN(value),
-              bePositive: (value) => value > 0,
-            },
-          })}
-        ></input>
+          ref={(e) => {
+            formRegister(e, {
+              required: true,
+              pattern: /^(?!0\d)(?:\d+)(?:[.,]\d+)?$/,
+              validate: {
+                number: (value) => !isNaN(value),
+                bePositive: (value) => value > 0,
+              },
+            });
+            inputRef.current = e;
+          }}
+        />
         <span className={cx("timer-input__suffix")}>分鐘</span>
         <Button
           type="submit"
