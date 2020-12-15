@@ -57,11 +57,5 @@ $size-themes:(
     }
   }
 
-  &:disabled{
-    color: $disabled-font-color;
-    background-color: $disabled-background-color;
-    cursor: not-allowed;
-  }
-
 }
 

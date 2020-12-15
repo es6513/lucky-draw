@@ -14,6 +14,23 @@ const { ROOT_CLASS } = css;
 
 const cx = classnames.bind(styles);
 
+const timerHint = [
+  {
+    message: `可接受 0 ~ ${COUNTDOWN_MAX_MINUTES}之正數`,
+    ex: "(ex:2 ,10, 0.5)",
+  },
+  {
+    message: "含特殊字元, 負數, 空格或其他錯誤格式等會無效",
+    ex: "(ex: +3, 02, -1, 00.5)",
+  },
+  {
+    message: "倒數秒數為四捨五入後的結果;",
+  },
+  {
+    message: "若整體時間不足1秒,則以1秒計算;",
+  },
+];
+
 function TimeControl() {
   //Redux Store
   const dispatch = useDispatch();
@@ -37,14 +54,12 @@ function TimeControl() {
       <Timer timeupCallback={timeupCallback} />
       <div className={cx("timer-control-hint")}>
         倒數時間說明:
-        <br />
-        1. 可接受 0 ~ {COUNTDOWN_MAX_MINUTES}之正數 (ex:2 ,10, 0.5) ;
-        <br />
-        2. 含特殊字元, 負數, 空格或其他錯誤格式等會無效 (ex: +3, 02, -1, 00.5);
-        <br />
-        3. 倒數秒數為四捨五入後的結果;
-        <br />
-        4. 若整體時間不足1秒,則以1秒計算;
+        {timerHint.map((hint, index) => (
+          <div key={index}>
+            <div> {`${index + 1}. ${hint.message}`}</div>
+            {hint.ex ? <div>{hint.ex}</div> : null}
+          </div>
+        ))}
       </div>
     </div>
   );

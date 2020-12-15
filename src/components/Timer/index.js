@@ -28,8 +28,8 @@ function Timer({ timeupCallback }) {
 
   //Timer process
   const setTimerSeconds = (data) => {
-    let { inputMinutes } = data;
-    let inputSeconds =
+    const { inputMinutes } = data;
+    const inputSeconds =
       parseFloat(inputMinutes * SECONDS_PER_MINUTE) < 1
         ? 1
         : Math.round(parseFloat(inputMinutes * SECONDS_PER_MINUTE));

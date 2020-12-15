@@ -20,7 +20,7 @@ $attend-lists-wrapper: #{$root-class}__attend-lists-wrapper;
        margin-bottom: 1.25 * $space-basis;
        display: flex;
        align-items: center;
-       
+       text-align: center;
       > * {
         flex-basis: (100% / 3);
       }

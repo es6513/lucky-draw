@@ -1,4 +1,5 @@
 @import "../../styles/settings.variables";
+@import "../../styles/rwd";
 
 .timer{
 
@@ -14,6 +15,10 @@
     border: solid 1px $gray-200;
     border-radius:  $space-basis;
     padding: 0.5 * $space-basis;
+
+    @include rwd($smWidth){
+      width: 10 * $space-basis;
+    }
 
     &__invalid{
       border: solid 1px $invalid;
@@ -32,6 +37,10 @@
   &-submit-button{
     width: 5 * $space-basis;
     margin-left: $space-basis;
+
+    @include rwd($smWidth){
+      width: 4 * $space-basis;
+    }
   }
 
   &-remaintime{

@@ -1,0 +1,7 @@
+
+@mixin rwd($width){
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
