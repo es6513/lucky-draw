@@ -5,7 +5,6 @@ $attend-lists-wrapper: #{$root-class}__attend-lists-wrapper;
 #{$attend-lists-wrapper}{
   .attend-lists {
     height: 600px;
-    width: 95%;
     margin-top: 1.25 * $space-basis;
     border:solid 1px $black;
     overflow-x: hidden;
