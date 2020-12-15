@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lucky-draw/static/css/main.57e2024f.chunk.css",
-    "main.js": "/lucky-draw/static/js/main.cb7295e5.chunk.js",
+    "main.js": "/lucky-draw/static/js/main.91f2a717.chunk.js",
     "runtime-main.js": "/lucky-draw/static/js/runtime-main.d1db0efd.js",
     "static/js/2.3f7cc261.chunk.js": "/lucky-draw/static/js/2.3f7cc261.chunk.js",
     "static/js/3.c2b42b23.chunk.js": "/lucky-draw/static/js/3.c2b42b23.chunk.js",
@@ -14,6 +14,6 @@
     "static/js/runtime-main.d1db0efd.js",
     "static/js/2.3f7cc261.chunk.js",
     "static/css/main.57e2024f.chunk.css",
-    "static/js/main.cb7295e5.chunk.js"
+    "static/js/main.91f2a717.chunk.js"
   ]
 }
