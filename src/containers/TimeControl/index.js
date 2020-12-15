@@ -16,18 +16,18 @@ const cx = classnames.bind(styles);
 
 const timerHint = [
   {
-    message: `可接受 0 ~ ${COUNTDOWN_MAX_MINUTES}之正數`,
-    ex: "(ex:2 ,10, 0.5)",
+    message: `可接受 0 ~ ${COUNTDOWN_MAX_MINUTES} 之正數`,
+    ex: "(ex: 2 ,10, 0.5)",
   },
   {
     message: "含特殊字元, 負數, 空格或其他錯誤格式等會無效",
     ex: "(ex: +3, 02, -1, 00.5)",
   },
   {
-    message: "倒數秒數為四捨五入後的結果;",
+    message: "倒數秒數為四捨五入後的結果",
   },
   {
-    message: "若整體時間不足1秒,則以1秒計算;",
+    message: "若整體時間不足1秒, 則以1秒計算",
   },
 ];
 
