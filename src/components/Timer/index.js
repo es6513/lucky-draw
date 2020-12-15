@@ -30,9 +30,9 @@ function Timer({ timeupCallback }) {
   const setTimerSeconds = (data) => {
     const { inputMinutes } = data;
     const inputSeconds =
-      parseFloat(inputMinutes * SECONDS_PER_MINUTE) < 1
+      inputMinutes * SECONDS_PER_MINUTE < 1
         ? 1
-        : Math.round(parseFloat(inputMinutes * SECONDS_PER_MINUTE));
+        : Math.round(inputMinutes * SECONDS_PER_MINUTE);
     refCountTime.current = inputSeconds;
     setCountdownSeconds(inputSeconds);
   };
