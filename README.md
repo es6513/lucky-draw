@@ -6,7 +6,7 @@
 
 or
 
-    npm i
+    npm install
 
 
 ### 啟動專案
@@ -17,4 +17,4 @@ or
 
     npm run start
 
-預設將自動打開  http://localhost:3000 ,即可檢視 
+預設將自動打開  http://localhost:3000/lucky-draw  ,即可檢視 
